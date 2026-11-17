@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Digit Trace</title>
+  <link rel="stylesheet" href="/styles.css">
+  <script src="/app.js" defer></script>
+</head>
+<body>
+  <main>
+    <header>
+      <h1>Digit Trace</h1>
+      <p>Draw a digit. See which training examples voted for it.</p>
+    </header>
+    <div class="workbench">
+      <section class="panel">
+        <h2>Draw a digit</h2>
+        <p>Use one centered digit from 0 to 9. Drag to draw or toggle cells with the keyboard.</p>
+        <fieldset id="pad" aria-label="8 by 8 drawing grid"></fieldset>
+        <div class="controls">
+          <button id="predict" type="button">Classify</button>
+          <button id="sample" type="button">Try sample</button>
+          <button id="clear" type="button">Clear</button>
+        </div>
+      </section>
+      <section class="panel output">
+        <h2>Prediction</h2>
+        <p id="status" role="status">Draw a digit or try the sample to begin.</p>
+        <div id="result" hidden>
+          <strong id="digit" class="digit"></strong>
+          <p id="votes"></p>
+          <h3>Five nearest training examples</h3>
+          <div id="neighbors"></div>
+        </div>
+      </section>
+    </div>
+    <p id="metrics" class="metrics"></p>
+  </main>
+</body>
+</html>
